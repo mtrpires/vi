@@ -8,6 +8,13 @@ set background=dark
 colo apprentice " color mode
 syntax on " syntax highlightning
 
+" NERDTree
+autocmd vimenter * NERDTree "NERDTree plugin for folders 
+let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Exits if NERDTree is the only left
+
+
+
 " HIGHLIGHTS 79TH CHARACTER
 highlight ColorColumn ctermbg=darkgrey 
 call matchadd('ColorColumn', '\%80v', 100)
